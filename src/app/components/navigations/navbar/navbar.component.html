@@ -1,0 +1,61 @@
+<main class="w-screen overflow-x-hidden h-100">
+    <header class="container mx-auto relative flex flex-col justify-center overflow-hidden">
+      <nav class="flex items-center justify-between gap-2 p-4">
+        <h1
+          class="font-bold ng-text-gradient text-2xl">
+          Angular Motion
+        </h1>
+        <!-- Navbar project-->
+        <div class="flex gap-4 items-center">
+          <a href="https://github.com/mofirojean/angular-motion" target="_blank" rel="noopener noreferrer" class="flex cursor-pointer items-center justify-center rounded-full">
+            <i class="{{ faBrandIcon('github') }} text-black text-2xl"></i>
+          </a>
+          <a href="https://x.com/mofirojean" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-full">
+            <i class="{{ faBrandIcon('x-twitter') }} text-black text-2xl"></i>
+          </a>
+          <span class="flex cursor-pointer items-center justify-center rounded-full">
+            <i class="far fa-sun text-black text-2xl"></i>
+          </span>
+          <!-- <span class="flex items-center justify-center rounded-full">
+            <i class="fas fa-moon text-black text-2xl"></i>
+          </span> -->
+        </div>
+        <!--<button
+          (click)="toggle()"
+          [ngClass]="{ 'bg-red-500' : menuOpen }"
+          class="h-[30px] w-[30px] flex items-center justify-center"
+          appButton
+        >
+          @if (menuOpen) {
+            <lucide-angular [img]="x" class="my-icon text-white"></lucide-angular>
+          } @else {
+            <lucide-angular [img]="menu" class="my-icon text-white"></lucide-angular>
+          }
+        </button>-->
+      </nav>
+    </header>
+    <!-- Sidebar Component -->
+  
+    <div @openClose *ngIf="menuOpen"
+         class="absolute top-0 right-0 z-20 flex h-full flex-col rounded-l-2xl bg-white p-4 bg-blend-color shadow w-[300px]">
+      <div class="relative flex w-full flex-col">
+        <div class="text-start">
+          <h1 class="px-4 font-sans text-xl font-bold text-purple-600">Sidebar Animation</h1>
+          <button type="button" (click)="toggle()"
+                  class="absolute top-0 right-0 h-6 w-6 rounded-full border-2 border-purple-600 text-center text-xs font-bold text-purple-600">
+            X
+          </button>
+        </div>
+      </div>
+      <div class="flex-grow">
+        <!-- Sidebar content -->
+        <ul class="flex flex-col py-4 text-purple-800">
+          <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-purple-700 hover:text-white">Home</a></li>
+          <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-purple-700 hover:text-white">About</a></li>
+          <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-purple-700 hover:text-white">Services</a></li>
+          <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-purple-700 hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
